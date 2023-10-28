@@ -1,0 +1,33 @@
+body{
+    font-size: 24px;
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+a:hover{
+    color: black;
+}
+
+.desc {
+    font-size: 18px;
+}
+
+.card:hover{
+    transition: 1s;
+    transition-delay: 0.3s;
+    border: solid 2px rgb(4, 4, 83);
+transition-timing-function: ease-out;
+}
+
+.navbar_brand{
+    font-size: 24px;
+    margin-right: 34px;
+    font-weight: 600;
+}
+

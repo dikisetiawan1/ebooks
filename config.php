@@ -7,7 +7,7 @@
 $host = 'localhost'; // host server
 $user = 'root'; // username server
 $pass = ''; // password server, kalau pakai xampp kosongin saja
-$dbname = 'db_food'; // nama database anda
+$dbname = 'db_course'; // nama database anda
 
 $conn = mysqli_connect($host, $user, $pass, $dbname);
 

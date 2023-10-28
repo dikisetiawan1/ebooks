@@ -12,17 +12,17 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>E-book digital </title>
+    <title>Fish Course </title>
 </head>
 
 <body>
     <div class="container">
         <div class="row mt-5">
-            <h1>Data E-book</h1>
+            <h1>Table Fish Course</h1>
             <div>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                    + Tambah Data E-book
+                    + Add Course
                 </button>
             </div>
             <div class="col">
@@ -30,13 +30,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Judul Buku</th>
-                            <th>Jenis</th>
-                            <th>Penulis</th>
-                            <th>Penerbit</th>
+                            <th>Title Course</th>
+                            <th>Category</th>
                             <th>Image</th>
-                            <th>Tahun</th>
-                            <th>Tgl publish</th>
+                            <th>Category</th>
+                            <th>Publish</th>
                             <th>action</th>
                         </tr>
                     </thead>
@@ -45,20 +43,18 @@
                         <?php $no = 1;
                         require '../config.php';
                         include '../view/index.php';
-                        $coba = new Buku($conn);
-                        $result = $coba->bukuDigital();
+                        $coba = new Course($conn);
+                        $result = $coba->menus();
 
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>" . $no++;
                             "</td>";
-                            echo "<td>" . $row['judul_buku'] . "</td>";
-                            echo "<td>" . $row['jenis_buku'] . "</td>";
-                            echo "<td>" . $row['penulis'] . "</td>";
-                            echo "<td>" . $row['penerbit'] . "</td>";
+                            echo "<td>" . $row['title'] . "</td>";
+                            echo "<td>" . $row['category'] . "</td>";
                             echo "<td>" . $row['img'] . "</td>";
-                            echo "<td>" . $row['tahun_terbit'] . "</td>";
-                            echo "<td>" . $row['create_upload'] . "</td>";
+                            echo "<td>" . $row['description'] . "</td>";
+                            echo "<td>" . $row['create_content'] . "</td>";
                             echo "<td> <a href='#'> Delete </a>| <a href='#'> Edit </a> </td>";
                             echo "</tr>";
                         }
@@ -77,7 +73,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah E-book</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add Course</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -86,37 +82,27 @@
                             <table class="table table-striped bordered">
 
                                 <tr>
-                                    <td>Judu Buku</td>
-                                    <td><input type="text" placeholder="Judul Buku.." required class="form-control" name="judul_buku"></td>
+                                    <td>Title</td>
+                                    <td><input type="text" placeholder="Course title.." required class="form-control" name="title"></td>
                                 </tr>
                                 <tr>
-                                    <td>Jenis Buku</td>
-                                    <td><input type="text" placeholder="Jenis buku.." required class="form-control" name="jenis_buku"></td>
+                                    <td>Category</td>
+                                    <td><input type="text" placeholder="Category.." required class="form-control" name="category"></td>
                                 </tr>
-                                <tr>
-                                    <td>Penulis</td>
-                                    <td><input type="text" placeholder="Penulis.." required class="form-control" name="penulis"></td>
-                                </tr>
-                                <tr>
-                                    <td>Penerbit</td>
-                                    <td><input type="text" placeholder="Penerbit.." required class="form-control" name="penerbit"></td>
-                                </tr>
+
                                 <tr>
                                     <td>Image</td>
                                     <td><input type="file" required class="form-control" name="img"></td>
                                 </tr>
                                 <tr>
-                                    <td>Tahun</td>
-                                    <td><input type="int" required class="form-control" name="tahun_terbit"></td>
+                                    <td>Description</td>
+                                    <td><input type="text" required class="form-control" name="description"></td>
                                 </tr>
                                 <tr>
                                     <td>Publish</td>
-                                    <td><input type="date" required class="form-control" name="create_upload"></td>
+                                    <td><input type="date" required class="form-control" name="create_content"></td>
                                 </tr>
-                                <tr>
-                                    <td>Deskripsi</td>
-                                    <td><input type="textarea" required class="form-control" name="description"></td>
-                                </tr>
+
                             </table>
                         </div>
                         <div class="modal-footer">
