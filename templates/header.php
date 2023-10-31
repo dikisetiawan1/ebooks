@@ -1,12 +1,18 @@
  <head>
+     <?php
+        include_once 'function/helper.php';
+
+        ?>
+
      <!-- Required meta tags -->
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <link rel="stylesheet" href="./assets/css/style.css">
+     <link rel="stylesheet" href="<?php echo BASE_URL . "/assets/css/style.css" ?>" type="text/css">
      <title>Fish Course </title>
+
  </head>
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -31,10 +37,10 @@
                      </ul>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="bootcamp.php?page=bootcamp">Bootcamp</a>
+                     <a class="nav-link" href="<?php echo BASE_URL . "index.php?page=bootcamp" ?>">Bootcamp</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="job.php?page=job">Jobs</a>
+                     <a class="nav-link" href="<?php echo BASE_URL . "index.php?page=job" ?>">Jobs</a>
                  </li>
              </ul>
          </div>
@@ -46,7 +52,10 @@
              </div>
 
              <div class="col">
-                 <a href="#">Register</a>
+                 <div class="register">
+                     <a href="#">Register</a>
+
+                 </div>
 
              </div>
          </div>
