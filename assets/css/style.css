@@ -1,18 +1,20 @@
-body{
+body {
     font-size: 18px;
     font-family: Arial, sans-serif;
     color: #1e5474;
-    
-}
-a{
-    text-decoration: none;
-    color: black;
+
 }
 
-li{
+a {
+    text-decoration: none;
+    color: white
+}
+
+li {
     list-style: none;
 }
-a:hover{
+
+a:hover {
     color: black;
 }
 
@@ -20,40 +22,43 @@ a:hover{
     font-size: 18px;
 }
 
-.card:hover{
+.card:hover {
     transition: 1s;
     transition-delay: 0.3s;
     border: solid 2px rgb(4, 4, 83);
-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
 }
 
-.navbar_brand{
+.navbar_brand {
     font-size: 24px;
     margin-right: 34px;
     font-weight: 600;
 }
 
-.container .register{
+.container .register {
     border: solid 2px rgb(16, 16, 100);
     padding: 5px;
     font-size: 16px;
     vertical-align: bottom;
     border-radius: 3px;
 }
-.container .register:hover{
+
+.container .register:hover {
     border: solid 2px orange;
-    
-}
-.container-fluid .title p{
-font-size: 32px;
-font-weight: bold;
-margin-bottom: -10px;
+
 }
 
-.container-fluid .select-option select{
+.container-fluid .title p {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: -10px;
+}
+
+.container-fluid .select-option select {
     border: none;
 }
-.container-fluid .select-option #ubah{
+
+.container-fluid .select-option #ubah {
     border: solid 2px #1e5474;
     padding: 3px 5px;
     border-radius: 3px;
@@ -62,11 +67,12 @@ margin-bottom: -10px;
     font-size: 18px;
     font-weight: bold;
 }
-.container-fluid .select-option #ubah:hover{
-   border: solid 2px orange;
+
+.container-fluid .select-option #ubah:hover {
+    border: solid 2px orange;
 }
 
-.container-fluid .label-option{
+.container-fluid .label-option {
     background-color: #1e5474;
     color: #f7f7f7;
     padding: 7px;
@@ -75,7 +81,16 @@ margin-bottom: -10px;
     border-radius: 3px;
 }
 
-.container-fluid .select-option{
+.container-fluid .select-option {
     margin-top: 10px;
 }
 
+.title-sidebar {
+    padding: 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#section-content .list-sidebar {
+    color: white;
+}

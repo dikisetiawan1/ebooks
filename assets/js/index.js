@@ -12,12 +12,11 @@
 
                 if (optionCourse.value == "textscript") {
                     text += textScript.style.visibility = 'visible';
-                } else {
-                    text += textScript.style.visibility = 'hidden';
+                }else if (optionCourse.value == "textscript") {
+                    text += videos.style.visibility = 'hidden';
+
                 }
-                if (optionCourse.value == "video") {
-                    text += videos.style.visibility = 'visible';
-                }
+                    
                 sectionOption.innerHTML = text;
             })
     //end  detail-course page
