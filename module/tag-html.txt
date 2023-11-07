@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <h2><b>Tag HTML</b></h2>
+            <div class="col-6 mt-4 " style=" border:solid 4px #4F6F52; margin-bottom:20px; font-size:18px">
+                <h4 class="mt-4">Code:</h4>
+                <pre>
+                    <code>
+                        <div class="content-left" style="margin-left:-220px; font-size:22px; font-weight:bold">
+                        &lt;?php&gt;
+
+                        $var = "diki";
+                        echo $var;
+                        
+                        ?&gt;     
+                    </div>
+                    </code>
+                </pre>
+
+            </div>
+            <div class="col-6 mt-4" style="background-color: white; color:black; margin-bottom:20px">
+                <h4 class="mt-4 ">Result:</h4>
+                <div class="content-rigth" style="margin-left:10px; font-size:22px; font-weight:bold">
+                    diki
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </h1>
+</body>
+
+</html>

@@ -66,7 +66,7 @@
                 $link = $row['img'];
                 echo "
                 <div class='col-4 mt-5'>
-                <a href='courseDetails.php?page=courseDetails'>
+                <a href='courseDetails.php?page=sejarah-html'>
                 <div class='card shadow'>
                     <div class='card-body'>
                 <img src={$link} style='width: 380px'>";

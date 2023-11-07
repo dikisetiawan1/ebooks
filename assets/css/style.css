@@ -7,16 +7,18 @@ body {
 
 a {
     text-decoration: none;
-    color: white
+    color: #1e5474;
+}
+
+a:hover {
+    color: #1e5474;
 }
 
 li {
     list-style: none;
 }
 
-a:hover {
-    color: black;
-}
+
 
 .desc {
     font-size: 18px;
@@ -48,17 +50,17 @@ a:hover {
 
 }
 
-.container-fluid .title p {
+.container .title p {
     font-size: 32px;
     font-weight: bold;
     margin-bottom: -10px;
 }
 
-.container-fluid .select-option select {
+.container .select-option select {
     border: none;
 }
 
-.container-fluid .select-option #ubah {
+.container .select-option #ubah {
     border: solid 2px #1e5474;
     padding: 3px 5px;
     border-radius: 3px;
@@ -68,12 +70,12 @@ a:hover {
     font-weight: bold;
 }
 
-.container-fluid .select-option #ubah:hover {
+.container .select-option #ubah:hover {
     border: solid 2px orange;
 }
 
-.container-fluid .label-option {
-    background-color: #1e5474;
+.container .label-option {
+    border: solid 2px #1e5474;
     color: #f7f7f7;
     padding: 7px;
     font-size: 14px;
@@ -81,7 +83,7 @@ a:hover {
     border-radius: 3px;
 }
 
-.container-fluid .select-option {
+.container .select-option {
     margin-top: 10px;
 }
 
@@ -89,6 +91,7 @@ a:hover {
     padding: 50px;
     font-size: 24px;
     font-weight: bold;
+    margin-left: -20px;
 }
 
 #section-content .list-sidebar {
