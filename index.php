@@ -62,11 +62,14 @@
             $coba = new Course($conn);
             $result = $coba->menus();
 
+
             while ($row = $result->fetch_array()) {
                 $link = $row['img'];
+                $id = $row['menus_id'];
+
                 echo "
                 <div class='col-4 mt-5'>
-                <a href='courseDetails.php?page=sejarah-html'>
+                <a href='" . BASE_URL . "courseDetails.php?id=$id'>
                 <div class='card shadow'>
                     <div class='card-body'>
                 <img src={$link} style='width: 380px'>";

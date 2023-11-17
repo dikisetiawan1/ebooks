@@ -1,3 +1,7 @@
+<?php
+$id = isset($_GET['id']) ? $_GET['id'] : false;
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -8,62 +12,96 @@
     <!-- content -->
     <div class="container">
         <div class="row " style="margin-top: 120px; margin-left:50px">
+            <?php
+            require './config.php';
+            $query = mysqli_query($conn, "SELECT * FROM tbl_menus WHERE menus_id='$id'");
+            $row = mysqli_fetch_assoc($query);
+            $title = $row['title'];
+            ?>
             <div class="col">
                 <div class="title mb-2">
-                    <p>HTML Course</p>
+                    <p>
+                        <?php
+                        echo $title . " Course";
+                        ?>
+                    </p>
                 </div>
-                <label for="option" class="mb-2 label-option" style="color: #1e5474;">Still happy learning today!</label> <br>
-                <!-- <div class="select-option">
-                    <select name="option" id="option">
-                        <option value="textscript">Script text</option>
-                        <option value="video">Video</option>
-                    </select>
-                    <button id="ubah">Find</button>
-                </div> -->
+                <label for="option" class="mb-2 label-option" style="color: #1e5474;">Always happy learning everyday!</label> <br>
             </div>
         </div>
+
         <!-- manipulasi data pada js -->
-        <div class="section" id="section_content">
-            <div class="row " id="videoCourse" style="margin-top:40px; margin-bottom:120px; margin-left:50px; visibility:visible">
-                <div class="col-3" style="background-color: #EBF3E8; border-radius:3px; color:#1e5474">
-                    <h1 class="title-sidebar" style="margin:0"> Penjelasan HTML</h1>
-                    <ul style="margin:0;margin-top:-30px">
-                        <li class="list-sidebar" style="padding-bottom:10px; padding:10px;background-color:#FFDCA9; padding-left:40px; margin-right:35px; ">
-                            <a href="<?php echo BASE_URL . "courseDetails.php?page=module&action=sejarah-html" ?>" style="color:black"> Sejarah html</a>
-                        </li>
-                        <li class="list-sidebar" style="padding-bottom:10px; padding:10px; padding-left:40px; margin-right:35px; ">
-                            <a href="<?php echo BASE_URL . "courseDetails.php?page=module&action=pengertian-html" ?>" style="color:black"> Pengertian html</a>
-                        </li>
+        <div class='section' id='section_content'>
+            <div class='row ' id='videoCourse' style='margin-top:40px; margin-bottom:120px; margin-left:50px; visibility:visible'>
 
-                        <li class="list-sidebar" style="padding-bottom:10px; padding:10px; padding-left:40px; margin-right:35px; ">
-                            <a href="<?php echo BASE_URL . "courseDetails.php?page=module&action=tag-html" ?>" style="color:black">Tag HTML</a>
-                            GIT
-                        </li>
-                    </ul>
+                <div class="col-3" style="background-color: #1e5474; border-radius:3px; color:white">
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size:24px; padding:15px 10px">
+                            Pendahuluan
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style=" margin:0;margin-top:-30px">
+                            <?php
+                            $query = mysqli_query($conn, "SELECT * FROM tbl_menus_sidebar");
+                            while ($row = mysqli_fetch_assoc($query)) {
+                                if ($row['menus_id'] == $id) {
+                                    echo "
+                                    <li class='list-sidebar' style='padding-bottom:10px; padding:10px; color:white'>
+                                        <a class='dropdown-item' href='#' style='color:black;'>$row[name]</a>
+                                    </li> ";
+                                }
+                            }
+                            ?>
+                        </ul>
+                    </li>
                 </div>
-                <div class=" col-8" style="margin-left: 80px; background-color:#1e5474; border-radius:6px; color:white;">
 
-                    <?php
-                    $page = isset($_GET['page']) ? $_GET['page'] : false;
-                    $action = isset($_GET['action']) ? $_GET['action']  : false;
-                    // include_once './module/sejarah-html.php';
-                    $filename = "./$page/$action.txt";
+                <div class=' col-8 shadow' style='margin-left: 80px; background-color:white;  border-radius:6px; color:black;'>
 
-                    if (file_exists($filename)) {
-                        include_once($filename);
-                    } else {
-                        echo "halaman tidak ada";
-                    }
+                    <div class="row">
+
+                        <div class="col-6" style="background: #EFFFFD; color:black; margin:0; padding:15px 25px; height:100% ; border-radius:6px 0px 0px 6px;">
+
+                            <h3 style="font-weight:600">Code</h3>
+
+                            <pre>
+                                <code>
+                                    <div class="content-left" style="margin-left:-320px; font-size:18px;">
+                                    &lt;?php
+
+                                    $var = "diki";
+                                    echo $var;
+            
+                                    ?&gt;     
+                                </div>
+                                </code>
+                            </pre>
+
+                        </div>
+                        <div class="col-6" style=" color:black; margin:0; padding:15px 25px; height:100%">
+                            <h3 style="font-weight:600">Result</h3>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, voluptates iusto. Officia veritatis soluta est.
+
+                        </div>
 
 
-                    // } elseif ($tes == 'pengertian-html') {
-                    //     echo "<img src='" . BASE_URL . "./assets/img/html.jpg' alt='html video' style='width: 900px; border-radius:10px'>";
-                    // }
+                        <!-- // $page = isset($_GET['page']) ? $_GET['page'] : false;
+                        // $action = isset($_GET['action']) ? $_GET['action'] : false;
+                        // include_once './module/sejarah-html.php';
+                        // $filename = "./$page/$action.txt";
+
+                        // if (file_exists($filename)) {
+                        // include_once($filename);
+                        // } else {
+                        // echo "halaman tidak ada";
+                        // } -->
 
 
 
+                    </div>
 
-                    ?>
                 </div>
                 </di>
             </div>
@@ -80,6 +118,7 @@
             </div> -->
 
         </div>
+
         <!-- end content -->
         <!-- footer -->
         <?php include_once './templates/footer.php'; ?>
